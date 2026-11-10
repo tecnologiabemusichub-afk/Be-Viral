@@ -289,7 +289,7 @@ export function Prizes() {
       <div className={cn(wrap, "text-center")}>
         <Reveal className="mx-auto max-w-3xl">
           <Eyebrow>Premiação</Eyebrow>
-          <H2>Seu alcance pode valer uma recompensa.</H2>
+          <H2>{"SEU ALCANCE\u00a0\nPODE VALER UMA RECOMPENSA."}</H2>
           <Lead className="mx-auto">
             No Be Viral, cada campeonato pode ter uma dinâmica{"\n"}própria de premiação.
           </Lead>
