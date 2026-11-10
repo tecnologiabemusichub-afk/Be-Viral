@@ -193,7 +193,7 @@ export type Championship = {
 export const CHAMPIONSHIPS: Championship[] = [
   { artist: "ARTISTA X", song: "Música Participante", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
   { artist: "ARTISTA Y", song: "Música Participante", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
-  { artist: "ARTISTA Z", song: "NMúsica Participante", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
+  { artist: "ARTISTA Z", song: "Música Participante", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
 ];
 
 type MockMenuItem = { icon: LucideIcon; label: string; active?: boolean };
