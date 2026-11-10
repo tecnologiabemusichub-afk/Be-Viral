@@ -16,15 +16,15 @@ function Eyebrow({ children }: { children: string }) {
   return <p className="eyebrow">{children}</p>;
 }
 function H2({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <h2 className={cn("mt-5 text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-7xl", className)}>{children}</h2>;
+  return <h2 className={cn("mt-5 text-[2rem] font-extrabold uppercase leading-[1.04] tracking-[-0.025em] sm:text-[2.5rem] lg:text-[3.5rem]", className)}>{children}</h2>;
 }
 function Lead({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <p className={cn("mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground", className)}>{children}</p>;
+  return <p className={cn("mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", className)}>{children}</p>;
 }
 function Tagline({ className }: { className?: string }) {
   return (
     <p className={cn("font-light italic leading-[1.05]", className)}>
-      O próximo viral pode ser o <span className="font-black not-italic">seu.</span>
+      O próximo viral pode ser o <span className="font-extrabold not-italic">seu.</span>
     </p>
   );
 }
@@ -43,7 +43,7 @@ export function Hero() {
         </Reveal>
         <Reveal delay={150} className="max-w-md">
           <Eyebrow>Campeonatos de cortes</Eyebrow>
-          <Tagline className="mt-6 text-5xl xl:text-6xl" />
+          <Tagline className="mt-6 text-4xl xl:text-5xl" />
           <p className="mt-6 leading-relaxed text-muted-foreground">
             Crie vídeos com músicas de artistas participantes, publique nas suas redes e transforme suas
             visualizações em oportunidades de ganhar premiações.
@@ -59,13 +59,13 @@ export function Hero() {
       <div className="flex flex-col lg:hidden">
         <Logo className="text-5xl" />
         <p className="eyebrow mt-12">Campeonatos de cortes</p>
-        <p className="mt-5 text-3xl font-light italic sm:text-4xl">O próximo</p>
+        <p className="mt-5 text-[1.75rem] font-light italic sm:text-4xl">O próximo</p>
         <h1 className="mt-2">
           <span className="sr-only">Viral — </span>
-          <CutWord className="text-[clamp(5.5rem,27vw,11rem)] font-black tracking-tight">VIRAL</CutWord>
+          <CutWord className="text-[clamp(4.5rem,23vw,9rem)] font-extrabold tracking-tight">VIRAL</CutWord>
         </h1>
-        <p className="mt-3 text-3xl font-light italic sm:text-4xl">
-          pode ser o <span className="font-black not-italic">seu.</span>
+        <p className="mt-3 text-[1.75rem] font-light italic sm:text-4xl">
+          pode ser o <span className="font-extrabold not-italic">seu.</span>
         </p>
         <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
           Crie vídeos com músicas de artistas participantes, publique nas suas redes e transforme suas
@@ -99,7 +99,7 @@ export function About() {
             redes sociais. Seu conteúdo pode alcançar novas pessoas, ajudar uma música a chegar mais longe e
             ainda render oportunidades de premiação.
           </p>
-          <p className="mt-8 max-w-lg text-xl font-bold leading-snug">
+          <p className="mt-7 max-w-lg text-lg font-bold leading-snug">
             Aqui, cada corte pode ser o começo de algo maior.
           </p>
         </Reveal>
@@ -159,10 +159,10 @@ export function HowItWorks() {
           <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s, i) => (
               <Reveal as="li" key={s.n} delay={i * 120}
-                className="group relative rounded-2xl border border-border bg-card/70 p-8 backdrop-blur transition-colors duration-300 hover:border-orange/50">
-                <span className="text-gradient-word block text-6xl font-black">{s.n}</span>
-                <h3 className="mt-8 text-lg font-bold uppercase leading-snug">{s.t}</h3>
-                <p className="mt-3 leading-relaxed text-muted-foreground">{s.d}</p>
+                className="group relative rounded-2xl border border-border bg-card/70 p-6 backdrop-blur transition-colors duration-300 hover:border-orange/50 lg:p-7">
+                <span className="text-gradient-word block text-5xl font-extrabold">{s.n}</span>
+                <h3 className="mt-6 text-base font-bold uppercase leading-snug">{s.t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
               </Reveal>
             ))}
           </ol>
@@ -211,7 +211,7 @@ function ChampionshipCard({ c, delay }: { c: Championship | null; delay: number 
       </div>
       <div className="flex flex-1 flex-col gap-4 p-6">
         <div>
-          <p className="text-xl font-black uppercase leading-tight tracking-tight">{c?.artist || "Nome do artista"}</p>
+          <p className="text-lg font-extrabold uppercase leading-tight tracking-tight">{c?.artist || "Nome do artista"}</p>
           <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
             <Music2 aria-hidden className="h-4 w-4 shrink-0 text-orange" />
             {c?.song || "Nome da música"}
@@ -255,7 +255,7 @@ export function Championships() {
       <div className={wrap}>
         <Reveal className="max-w-4xl">
           <Eyebrow>Campeonatos disponíveis</Eyebrow>
-          <H2 className="lg:text-6xl">
+          <H2>
             UMA MÚSICA. MUITAS POSSIBILIDADES.<br /><span className="text-gradient-word">QUAL VAI SER O SEU PRÓXIMO CORTE?</span>
           </H2>
           <Lead>Explore os campeonatos disponíveis no Be Viral e escolha aqueles dos quais deseja participar.</Lead>
@@ -298,7 +298,7 @@ export function Prizes() {
             <Reveal key={c.t} delay={i * 120}
               className="h-full rounded-2xl border border-border bg-card/70 p-8 text-left transition-transform duration-300 hover:-translate-y-1">
               <c.icon aria-hidden className="h-8 w-8 text-orange" />
-              <h3 className="mt-6 text-lg font-bold uppercase leading-snug">{c.t}</h3>
+              <h3 className="mt-6 text-base font-bold uppercase leading-snug">{c.t}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
             </Reveal>
           ))}
@@ -306,7 +306,7 @@ export function Prizes() {
         <p className="mx-auto mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           Cada campeonato terá seus próprios critérios, valores e regras, apresentados dentro da plataforma.
         </p>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">
           Escolha seu desafio, crie seus cortes e descubra até onde seu conteúdo pode chegar.
         </p>
         <Reveal delay={120} className="mt-12 flex justify-center">
@@ -336,7 +336,7 @@ export function Ranking() {
             O ranking permite acompanhar a evolução dos conteúdos e a posição dos participantes em cada
             campeonato, de acordo com os critérios estabelecidos para aquela disputa.
           </p>
-          <p className="mt-10 text-3xl font-black uppercase leading-none tracking-tight lg:text-4xl">
+          <p className="mt-8 text-2xl font-extrabold uppercase leading-[1.1] tracking-tight lg:text-3xl">
             Seu próximo corte pode <span className="text-gradient-word">mudar tudo.</span>
           </p>
         </Reveal>
@@ -354,7 +354,7 @@ export function Ranking() {
           <ul aria-label="Exemplo de ranking, sem dados reais">
             {DEMO_ROWS.map((r) => (
               <li key={r.pos} className="grid grid-cols-[36px_1fr_auto] items-center gap-2 border-b border-border/60 px-2 py-4 last:border-0 sm:grid-cols-[40px_1fr_auto_48px] sm:gap-3">
-                <span className={cn("text-lg font-black", r.pos === 1 && "text-gradient-word")}>{String(r.pos).padStart(2, "0")}</span>
+                <span className={cn("text-lg font-extrabold", r.pos === 1 && "text-gradient-word")}>{String(r.pos).padStart(2, "0")}</span>
                 <div className="flex min-w-0 items-center gap-3">
                   <span aria-hidden className="h-8 w-8 shrink-0 rounded-full bg-gradient-button opacity-80 sm:h-9 sm:w-9" />
                   <div className="min-w-0 space-y-1.5">
@@ -391,7 +391,7 @@ export function CreatorBenefit() {
             sua presença nas redes e construir uma audiência que pode continuar acompanhando seu conteúdo
             depois do campeonato.
           </p>
-          <p className="mt-10 text-2xl font-black uppercase leading-none tracking-tight lg:text-3xl">
+          <p className="mt-8 text-xl font-extrabold uppercase leading-[1.15] tracking-tight lg:text-2xl">
             Sua criatividade pode <span className="text-gradient-word">abrir novos caminhos.</span>
           </p>
         </Reveal>
@@ -438,8 +438,8 @@ export function ContentCreation() {
           {IDEAS.map((t, i) => (
             <Reveal key={i} delay={i * 100}
               className="group grid items-center gap-4 py-10 lg:grid-cols-[100px_1fr] lg:gap-12 lg:py-14">
-              <span className="text-gradient-word text-2xl font-black lg:text-3xl">{String(i + 1).padStart(2, "0")}</span>
-              <p className="max-w-3xl text-xl font-light leading-relaxed transition-transform duration-500 group-hover:translate-x-2 lg:text-3xl">
+              <span className="text-gradient-word text-xl font-extrabold lg:text-2xl">{String(i + 1).padStart(2, "0")}</span>
+              <p className="max-w-3xl text-lg font-normal leading-relaxed transition-transform duration-500 group-hover:translate-x-2 lg:text-2xl">
                 {t}
               </p>
             </Reveal>
@@ -511,7 +511,7 @@ export function Faq() {
                       aria-expanded={isOpen}
                       aria-controls={`faq-a-${i}`}
                       onClick={() => setOpen(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-6 py-6 text-left text-lg font-bold transition-colors hover:text-orange"
+                      className="flex w-full items-center justify-between gap-6 py-6 text-left text-base font-semibold transition-colors hover:text-orange"
                     >
                       {f.q}
                       <Plus aria-hidden className={cn("h-5 w-5 shrink-0 text-orange transition-transform duration-300", isOpen && "rotate-45")} />
@@ -524,7 +524,7 @@ export function Faq() {
                     className={cn("grid transition-[grid-template-rows] duration-400 ease-out", isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}
                   >
                     <div className="overflow-hidden">
-                      <p className="pb-6 pr-10 leading-relaxed text-muted-foreground">{f.a}</p>
+                      <p className="pb-6 pr-10 text-sm leading-relaxed text-muted-foreground sm:text-base">{f.a}</p>
                     </div>
                   </div>
                 </li>
@@ -543,14 +543,14 @@ export function FinalCta() {
     <section id="participar" className="glow-tr-bl section-x section-y overflow-hidden">
       <Reveal className={cn(wrap, "flex flex-col items-center text-center")}>
         <Eyebrow>Campeonatos de cortes</Eyebrow>
-        <h2 className="mt-8 max-w-5xl text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+        <h2 className="mt-6 max-w-4xl text-[2rem] font-extrabold uppercase leading-[1.04] tracking-[-0.025em] sm:text-[2.5rem] lg:text-[3.5rem]">
           Sua próxima criação pode <span className="text-gradient-word">chegar muito mais longe.</span>
         </h2>
-        <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           Entre para o Be Viral, conheça os campeonatos disponíveis e coloque sua criatividade em movimento.
         </p>
-        <Waveform className="mt-12" />
-        <CtaButton location="final" label="CADASTRE-SE E PARTICIPE" className="mt-12 h-16 w-full px-12 text-base sm:w-auto" />
+        <Waveform className="mt-10" />
+        <CtaButton location="final" label="CADASTRE-SE E PARTICIPE" className="mt-10 w-full px-8 sm:w-auto" />
       </Reveal>
     </section>
   );
