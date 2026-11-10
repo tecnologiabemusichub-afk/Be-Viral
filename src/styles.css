@@ -133,6 +133,54 @@
   color: var(--bv-orange);
 }
 
+/* Logo entrance: the cut halves meet, then the cut line sweeps across. */
+@keyframes cut-word-top-in {
+  from { opacity: 0; transform: translateX(-0.2em); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes cut-word-bottom-in {
+  from { opacity: 0; transform: translateX(0.2em); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes cut-word-line-in {
+  from { opacity: 0; transform: translateY(-50%) scaleX(0); }
+  to { opacity: 1; transform: translateY(-50%) scaleX(1); }
+}
+.cut-word-animated .cut-word-top {
+  opacity: 0;
+  animation: cut-word-top-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards;
+}
+.cut-word-animated .cut-word-bottom {
+  opacity: 0;
+  animation: cut-word-bottom-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards;
+}
+.cut-word-animated .cut-word-line {
+  opacity: 0;
+  transform-origin: left center;
+  animation: cut-word-line-in 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) 0.75s forwards;
+}
+
+/* Compact logo entrance for the mobile hero. */
+@keyframes logo-part-in {
+  from { opacity: 0; transform: translateY(0.22em); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes logo-play-in {
+  from { opacity: 0; transform: scale(0) rotate(-25deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+.logo-animated .logo-be,
+.logo-animated .logo-viral {
+  opacity: 0;
+  animation: logo-part-in 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.logo-animated .logo-viral { animation-delay: 0.18s; }
+.logo-animated .logo-play {
+  opacity: 0;
+  transform-origin: center;
+  animation: logo-play-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) 0.65s forwards;
+}
+
 /* Scroll reveal */
 @utility reveal {
   opacity: 0; transform: translateY(24px);
@@ -144,4 +192,10 @@
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+  .cut-word-animated .cut-word-top,
+  .cut-word-animated .cut-word-bottom,
+  .cut-word-animated .cut-word-line,
+  .logo-animated .logo-be,
+  .logo-animated .logo-viral,
+  .logo-animated .logo-play { opacity: 1; transform: none; }
 }

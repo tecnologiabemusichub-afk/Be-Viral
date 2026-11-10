@@ -37,7 +37,7 @@ export function Hero() {
       <div className={cn(wrap, "hidden w-full items-center gap-16 lg:grid lg:grid-cols-[1.25fr_1fr]")}>
         <Reveal>
           <h1 className="sr-only">Be Viral — campeonatos de cortes da Be Music</h1>
-          <CutWord gradientClass="text-gradient-logo" className="text-[clamp(5rem,9.5vw,9.5rem)]">
+          <CutWord animate gradientClass="text-gradient-logo" className="text-[clamp(5rem,9.5vw,9.5rem)]">
             <Logo />
           </CutWord>
         </Reveal>
@@ -56,7 +56,7 @@ export function Hero() {
       </div>
       {/* Mobile / tablet */}
       <div className="flex flex-col lg:hidden">
-        <Logo className="text-5xl" />
+        <Logo className="text-5xl" animated />
         <p className="eyebrow mt-12">Campeonatos de cortes</p>
         <p className="mt-5 text-[1.75rem] font-light italic sm:text-4xl">O próximo</p>
         <h1 className="mt-2">
