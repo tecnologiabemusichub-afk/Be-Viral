@@ -449,7 +449,6 @@ export function CreatorBenefit() {
     <section id="criador" className="glow-tr-bl section-x py-14 lg:py-20">
       <div className={cn(wrap, "grid items-center gap-10 lg:grid-cols-2 lg:gap-14")}>
         <Reveal>
-          <Eyebrow>Para o criador</Eyebrow>
           <H2>O público que você conquista é seu.</H2>
           <Lead className="max-w-lg">
             Participar de um campeonato pode ser muito mais do que concorrer a uma premiação.
