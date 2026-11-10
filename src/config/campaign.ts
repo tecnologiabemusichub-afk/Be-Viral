@@ -1,6 +1,7 @@
 /**
- * Endereço oficial de inscrição. Enquanto estiver vazio, todos os botões
- * "QUERO PARTICIPAR" levam à chamada final da página (#participar).
+ * Endereço oficial de cadastro na plataforma Be Viral.
+ * Enquanto estiver vazio, todos os botões de cadastro levam à chamada final
+ * da página (#participar) — nada é apontado para uma URL inventada.
  */
 export const SIGNUP_URL = "";
 

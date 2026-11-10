@@ -1,22 +1,24 @@
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ctaHref, SIGNUP_URL, trackCta } from "@/config/campaign";
+import { ctaHref, trackCta } from "@/config/campaign";
 
 export function CtaButton({
   location,
   label = "QUERO PARTICIPAR",
   size = "lg",
+  href = ctaHref,
   className,
 }: {
   location: string;
   label?: string;
   size?: "sm" | "lg";
+  href?: string;
   className?: string;
 }) {
-  const external = Boolean(SIGNUP_URL);
+  const external = /^https?:\/\//i.test(href);
   return (
     <a
-      href={ctaHref}
+      href={href}
       onClick={() => trackCta(location)}
       data-cta={location}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}

@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Be Viral | Campeonato de Cortes da Be Music" },
-      { name: "description", content: "O próximo viral pode ser o seu. Conheça o Be Viral, o campeonato de cortes da Be Music." },
+      { name: "description", content: "O próximo viral pode ser o seu. Crie vídeos com músicas de artistas participantes, publique nas suas redes e participe dos campeonatos de cortes do Be Viral." },
       { name: "author", content: "Be Music" },
       { property: "og:title", content: "Be Viral | Campeonato de Cortes da Be Music" },
       { property: "og:description", content: "O próximo viral pode ser o seu." },

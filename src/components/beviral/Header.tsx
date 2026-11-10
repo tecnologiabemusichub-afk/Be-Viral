@@ -5,9 +5,10 @@ import { Logo } from "./Logo";
 import { CtaButton } from "./CtaButton";
 
 const LINKS = [
-  { href: "#campeonato", label: "O campeonato" },
+  { href: "#campeonatos", label: "Campeonatos" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#premiacao", label: "Premiação" },
+  { href: "#ranking", label: "Ranking" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -40,7 +41,7 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <CtaButton location="header" label="PARTICIPAR" size="sm" className="hidden sm:inline-flex" />
+          <CtaButton location="header" label="CADASTRE-SE" size="sm" className="hidden sm:inline-flex" />
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border lg:hidden"
