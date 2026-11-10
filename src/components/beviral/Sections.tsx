@@ -491,7 +491,6 @@ export function ContentCreation() {
     <section className="glow-tl-br section-x section-y">
       <div className={wrap}>
         <Reveal>
-          <Eyebrow>Criação de conteúdo</Eyebrow>
           <H2 className="max-w-5xl">
             Não é só recortar. <span className="text-gradient-word">É encontrar o momento certo.</span>
           </H2>
