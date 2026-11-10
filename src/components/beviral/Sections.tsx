@@ -480,38 +480,7 @@ export function CreatorBenefit() {
   );
 }
 
-/* 08 — CRIAÇÃO DE CONTEÚDO */
-const IDEAS = [
-  "Um bom corte prende a atenção, desperta curiosidade e faz as pessoas quererem assistir até o final.",
-  "Explore diferentes ideias, encontre os melhores trechos da música e experimente formatos que conversem com seu público.",
-  "Não existe uma única maneira de criar. O importante é colocar sua criatividade em movimento.",
-];
-export function ContentCreation() {
-  return (
-    <section className="glow-tl-br section-x section-y">
-      <div className={wrap}>
-        <Reveal>
-          <H2 className="max-w-5xl">
-            Não é só recortar. <span className="text-gradient-word">É encontrar o momento certo.</span>
-          </H2>
-        </Reveal>
-        <div className="mt-16 divide-y divide-border border-y border-border lg:mt-24">
-          {IDEAS.map((t, i) => (
-            <Reveal key={i} delay={i * 100}
-              className="group grid items-center gap-4 py-10 lg:grid-cols-[100px_1fr] lg:gap-12 lg:py-14">
-              <span className="text-gradient-word text-xl font-extrabold lg:text-2xl">{String(i + 1).padStart(2, "0")}</span>
-              <p className="max-w-3xl text-lg font-normal leading-relaxed transition-transform duration-500 group-hover:translate-x-2 lg:text-2xl">
-                {t}
-              </p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* 09 — CTA FINAL */
+/* 08 — CTA FINAL */
 export function FinalCta() {
   return (
     <section id="participar" className="glow-tr-bl section-x section-y overflow-hidden">
