@@ -256,7 +256,7 @@ export function Championships() {
         <Reveal className="max-w-4xl">
           <Eyebrow>Campeonatos disponíveis</Eyebrow>
           <H2>
-            UMA MÚSICA. MUITAS POSSIBILIDADES.<br /><span className="text-gradient-word">QUAL VAI SER O SEU PRÓXIMO CORTE?</span>
+            UMA MÚSICA. MUITAS POSSIBILIDADES.<br /><span className="text-gradient-word">QUAL VAI SER O<br />SEU PRÓXIMO CORTE?</span>
           </H2>
           <Lead>Explore os campeonatos disponíveis no Be Viral e escolha aqueles dos quais deseja participar.</Lead>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
