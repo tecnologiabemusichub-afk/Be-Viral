@@ -231,9 +231,9 @@ export function Ranking() {
         </Reveal>
         <Reveal delay={150} className="relative rounded-2xl border border-border bg-card/80 p-4 sm:p-6">
           <div className="mb-4 flex items-center justify-between px-2">
-            <span className="text-sm font-bold uppercase tracking-widest">Leaderboard</span>
+            <span className="text-sm font-bold uppercase tracking-widest">RANKING</span>
             <span className="rounded-full border border-orange/50 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-orange">
-              Exemplo visual
+              BE VIRAL
             </span>
           </div>
           <div className="grid grid-cols-[40px_1fr_auto_48px] gap-3 border-b border-border px-2 pb-3 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
