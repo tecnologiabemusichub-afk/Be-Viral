@@ -256,12 +256,12 @@ export function Championships() {
         <Reveal className="max-w-4xl">
           <Eyebrow>Campeonatos disponíveis</Eyebrow>
           <H2 className="lg:text-6xl">
-            UMA MÚSICA. MUITAS POSSIBILIDADES.<span className="text-gradient-word">{"\u00a0\nQUAL VAI SER O SEU PRÓXIMO CORTE?"}</span>
+            UMA MÚSICA. MUITAS POSSIBILIDADES.<br /><span className="text-gradient-word">QUAL VAI SER O SEU PRÓXIMO CORTE?</span>
           </H2>
           <Lead>Explore os campeonatos disponíveis no Be Viral e escolha aqueles dos quais deseja participar.</Lead>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-            Cada campeonato é uma oportunidade de criar, alcançar novas pessoas e{"\n"}
-            ajudar uma{"\u00a0"} música a ganhar ainda mais destaque.
+            Cada campeonato é uma oportunidade de criar, alcançar novas pessoas e<br />
+            ajudar uma música a ganhar ainda mais destaque.
           </p>
         </Reveal>
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:mt-24 lg:grid-cols-3">
@@ -289,9 +289,9 @@ export function Prizes() {
       <div className={cn(wrap, "text-center")}>
         <Reveal className="mx-auto max-w-3xl">
           <Eyebrow>Premiação</Eyebrow>
-          <H2>{"SEU ALCANCE\u00a0\nPODE VALER UMA RECOMPENSA."}</H2>
+          <H2>SEU ALCANCE<br />PODE VALER UMA RECOMPENSA.</H2>
           <Lead className="mx-auto">
-            No Be Viral, cada campeonato pode ter uma dinâmica{"\n"}própria de premiação.
+            No Be Viral, cada campeonato pode ter uma dinâmica<br />própria de premiação.
           </Lead>
         </Reveal>
         <div className="mt-16 grid gap-5 sm:grid-cols-3 lg:mt-24">
