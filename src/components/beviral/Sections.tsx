@@ -2,6 +2,8 @@ import { useState } from "react";
 import {
   Plus, TrendingUp, Play, Heart, MessageCircle, Share2,
   Music2, Radio, CalendarDays, Eye,
+  Home, Trophy, Gift, Clapperboard, User, Search, Bell,
+  type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
@@ -194,11 +196,37 @@ export const CHAMPIONSHIPS: Championship[] = [
   { artist: "Campeonato 3", song: "Nome da música", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
 ];
 
+type MockMenuItem = { icon: LucideIcon; label: string; active?: boolean };
+
+const MOCK_MENU: MockMenuItem[] = [
+  { icon: Home, label: "Início" },
+  { icon: Trophy, label: "Campeonatos", active: true },
+  { icon: TrendingUp, label: "Ranking" },
+  { icon: Gift, label: "Premiação" },
+  { icon: Clapperboard, label: "Meus cortes" },
+  { icon: User, label: "Perfil" },
+];
+
+function MockMenuRow({ item, compact }: { item: MockMenuItem; compact?: boolean }) {
+  return (
+    <span
+      className={cn(
+        "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold",
+        compact ? "shrink-0" : "w-full",
+        item.active ? "bg-gradient-button text-primary-foreground" : "text-muted-foreground",
+      )}
+    >
+      <item.icon aria-hidden className="h-4 w-4 shrink-0" />
+      {item.label}
+    </span>
+  );
+}
+
 function ChampionshipCard({ c, delay }: { c: Championship | null; delay: number }) {
   return (
     <Reveal
       delay={delay}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card/70 transition-colors duration-300 hover:border-orange/50"
+      className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background/60 transition-colors duration-300 hover:border-orange/50"
     >
       <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-border">
         {c?.image ? (
@@ -206,28 +234,30 @@ function ChampionshipCard({ c, delay }: { c: Championship | null; delay: number 
         ) : (
           <>
             <div aria-hidden className="absolute inset-0 opacity-20" style={{ background: "var(--gradient-word)" }} />
-            <span className="relative text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+            <span className="relative text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
               Arte do campeonato
             </span>
           </>
         )}
       </div>
-      <div className="flex flex-1 flex-col gap-4 p-6">
+      <div className="flex flex-1 flex-col gap-3 p-4">
         <div>
-          <p className="text-lg font-extrabold uppercase leading-tight tracking-tight">{c?.artist || "Nome do artista"}</p>
-          <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-            <Music2 aria-hidden className="h-4 w-4 shrink-0 text-orange" />
+          <p className="text-sm font-extrabold uppercase leading-tight tracking-tight">{c?.artist || "Nome do artista"}</p>
+          <p className="mt-1.5 flex items-center gap-2 text-xs text-muted-foreground">
+            <Music2 aria-hidden className="h-3.5 w-3.5 shrink-0 text-orange" />
             {c?.song || "Nome da música"}
           </p>
         </div>
-        <p className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Radio aria-hidden className="h-4 w-4 shrink-0 text-orange" />
-          {c?.networks?.length ? c.networks.join(" · ") : "Redes participantes"}
-        </p>
-        <p className="flex items-center gap-2 text-sm text-muted-foreground">
-          <CalendarDays aria-hidden className="h-4 w-4 shrink-0 text-orange" />
-          {c?.period || "Período de participação"}
-        </p>
+        <div className="mt-auto flex flex-col gap-2 border-t border-border pt-3 text-xs text-muted-foreground">
+          <span className="flex items-center gap-2">
+            <Radio aria-hidden className="h-3.5 w-3.5 shrink-0 text-orange" />
+            {c?.networks?.length ? c.networks.join(" · ") : "Redes participantes"}
+          </span>
+          <span className="flex items-center gap-2">
+            <CalendarDays aria-hidden className="h-3.5 w-3.5 shrink-0 text-orange" />
+            {c?.period || "Período de participação"}
+          </span>
+        </div>
       </div>
     </Reveal>
   );
@@ -239,7 +269,7 @@ export function Championships() {
     <section id="campeonatos" className="glow-tr-bl section-x section-y">
       <div className={wrap}>
         <Reveal className="max-w-4xl">
-          <Eyebrow>Campeonatos disponíveis</Eyebrow>
+          <Eyebrow>Dentro da plataforma</Eyebrow>
           <H2>
             UMA MÚSICA. MUITAS POSSIBILIDADES.<br /><span className="text-gradient-word">QUAL VAI SER O<br />SEU PRÓXIMO CORTE?</span>
           </H2>
@@ -249,14 +279,71 @@ export function Championships() {
             ajudar uma música a ganhar ainda mais destaque.
           </p>
         </Reveal>
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:mt-24 lg:grid-cols-3">
-          {cards.map((c, i) => (
-            <ChampionshipCard key={i} c={c} delay={i * 120} />
-          ))}
-        </div>
-        <p className="mt-10 max-w-2xl text-sm italic leading-relaxed text-muted-foreground">
-          Prévia da tela inicial — nomes, artes e períodos são ilustrativos.
-        </p>
+
+        <Reveal delay={120} className="mt-16 lg:mt-24">
+          <div className="overflow-hidden rounded-3xl border border-border bg-card/80 shadow-mockup">
+            {/* barra da janela */}
+            <div className="flex items-center gap-4 border-b border-border bg-background/70 px-5 py-3.5">
+              <div aria-hidden className="flex shrink-0 gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/25" />
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/25" />
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/25" />
+              </div>
+              <p aria-hidden className="min-w-0 flex-1 truncate text-xs text-muted-foreground">
+                Plataforma Be Viral
+              </p>
+              <div aria-hidden className="flex shrink-0 items-center gap-3">
+                <Bell className="h-4 w-4 text-muted-foreground/50" />
+                <span className="h-7 w-7 rounded-full bg-gradient-button" />
+              </div>
+            </div>
+
+            {/* menu horizontal (mobile) */}
+            <div className="flex flex-wrap gap-2 border-b border-border px-4 py-3 lg:hidden">
+              {MOCK_MENU.map((m) => (
+                <MockMenuRow key={m.label} item={m} compact />
+              ))}
+            </div>
+
+            <div className="grid lg:grid-cols-[220px_1fr]">
+              {/* menu lateral */}
+              <nav aria-label="Menu da plataforma — ilustração" className="hidden flex-col gap-1 border-r border-border p-4 lg:flex">
+                <p className="px-3 pb-2 pt-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+                  Menu
+                </p>
+                {MOCK_MENU.map((m) => (
+                  <MockMenuRow key={m.label} item={m} />
+                ))}
+              </nav>
+
+              {/* conteúdo */}
+              <div className="min-w-0 p-5 sm:p-8">
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <h3 className="text-base font-extrabold uppercase tracking-tight sm:text-lg">Campeonatos</h3>
+                    <p className="mt-1.5 text-xs text-muted-foreground">
+                      Escolha uma disputa para ver música, regras e período.
+                    </p>
+                  </div>
+                  <p aria-hidden className="flex items-center gap-2 rounded-full border border-border bg-background/60 px-3.5 py-1.5 text-xs text-muted-foreground">
+                    <Search className="h-3.5 w-3.5" />
+                    Buscar campeonato
+                  </p>
+                </div>
+
+                <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {cards.map((c, i) => (
+                    <ChampionshipCard key={i} c={c} delay={i * 120} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6 max-w-2xl text-sm italic leading-relaxed text-muted-foreground">
+            Ilustração de como a tela aparecerá dentro da plataforma — nomes, artes e períodos são exemplos.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

@@ -80,6 +80,7 @@
   --gradient-logo: linear-gradient(90deg, #f2a03d 0%, #e8813f 45%, #e070b8 100%);
   --glow-magenta: rgba(140, 40, 130, 0.7);
   --glow-orange: rgba(214, 112, 52, 0.6);
+  --shadow-mockup: 0 48px 120px -48px rgba(0, 0, 0, 0.85);
 }
 
 @layer base {
@@ -114,6 +115,7 @@
 }
 
 @utility bg-gradient-button { background-image: var(--gradient-button); }
+@utility shadow-mockup { box-shadow: var(--shadow-mockup); }
 @utility text-gradient-word {
   background-image: var(--gradient-word);
   -webkit-background-clip: text; background-clip: text; color: transparent;
