@@ -177,9 +177,8 @@ export function HowItWorks() {
 
 /* 04 — CAMPEONATOS */
 /**
- * Preencha quando um campeonato existir: artista, música, redes participantes,
- * período, arte e link da página dele na plataforma.
- * Deixe vazio para manter o estado "a publicar" abaixo.
+ * Mockup da tela inicial: os cards abaixo mostram o formato de um campeonato.
+ * Substitua nome, música, redes, período, arte e link pelos dados oficiais.
  */
 export type Championship = {
   artist: string;
@@ -189,7 +188,11 @@ export type Championship = {
   url?: string;
   image?: string;
 };
-export const CHAMPIONSHIPS: Championship[] = [];
+export const CHAMPIONSHIPS: Championship[] = [
+  { artist: "Campeonato 1", song: "Nome da música", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
+  { artist: "Campeonato 2", song: "Nome da música", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
+  { artist: "Campeonato 3", song: "Nome da música", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
+];
 
 function ChampionshipCard({ c, delay }: { c: Championship | null; delay: number }) {
   return (
@@ -225,24 +228,6 @@ function ChampionshipCard({ c, delay }: { c: Championship | null; delay: number 
           <CalendarDays aria-hidden className="h-4 w-4 shrink-0 text-orange" />
           {c?.period || "Período de participação"}
         </p>
-        <div className="mt-auto pt-4">
-          {c?.url ? (
-            <CtaButton
-              href={c.url}
-              location={`campeonato_${c.artist.toLowerCase().replace(/\s+/g, "-")}`}
-              label="VER CAMPEONATO"
-              size="sm"
-              className="w-full"
-            />
-          ) : (
-            <span
-              aria-disabled
-              className="inline-flex h-10 w-full items-center justify-center rounded-full border border-dashed border-border text-xs font-bold uppercase tracking-wide text-muted-foreground"
-            >
-              Ver campeonato
-            </span>
-          )}
-        </div>
       </div>
     </Reveal>
   );
@@ -270,7 +255,7 @@ export function Championships() {
           ))}
         </div>
         <p className="mt-10 max-w-2xl text-sm italic leading-relaxed text-muted-foreground">
-          {"\n"}
+          Prévia da tela inicial — nomes, artes e períodos são ilustrativos.
         </p>
       </div>
     </section>
