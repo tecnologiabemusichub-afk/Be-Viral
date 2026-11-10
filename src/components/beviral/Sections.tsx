@@ -7,7 +7,6 @@ import {
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { CutWord, CutLine } from "./CutWord";
-import { Waveform } from "./Waveform";
 import { CtaButton } from "./CtaButton";
 import { Reveal } from "./Reveal";
 
@@ -49,7 +48,6 @@ export function Hero() {
             Crie vídeos com músicas de artistas participantes, publique nas suas redes e transforme suas
             visualizações em oportunidades de ganhar premiações.
           </p>
-          <Waveform className="mt-10" />
           <CtaButton location="hero" label="CADASTRE-SE" className="mt-10" />
           <p className="mt-6 text-sm italic leading-relaxed text-muted-foreground">
             {"\n"}
@@ -72,7 +70,6 @@ export function Hero() {
           Crie vídeos com músicas de artistas participantes, publique nas suas redes e transforme suas
           visualizações em oportunidades de ganhar premiações.
         </p>
-        <Waveform className="mt-10" bars={20} />
         <CtaButton location="hero" label="CADASTRE-SE" className="mt-10 w-full" />
       </div>
     </section>
@@ -455,7 +452,6 @@ export function FinalCta() {
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           Entre para o Be Viral, conheça os campeonatos disponíveis e coloque sua criatividade em movimento.
         </p>
-        <Waveform className="mt-10" />
         <CtaButton location="final" label="CADASTRE-SE E PARTICIPE" className="mt-10 w-full px-8 sm:w-auto" />
       </Reveal>
     </section>

@@ -133,13 +133,6 @@
   color: var(--bv-orange);
 }
 
-/* Waveform */
-@keyframes wave-pulse { 0%,100% { transform: scaleY(1); } 50% { transform: scaleY(0.55); } }
-@utility wave-bar {
-  transform-origin: center;
-  animation: wave-pulse 1.6s ease-in-out infinite;
-}
-
 /* Scroll reveal */
 @utility reveal {
   opacity: 0; transform: translateY(24px);
