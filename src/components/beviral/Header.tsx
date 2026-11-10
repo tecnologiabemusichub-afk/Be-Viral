@@ -9,7 +9,6 @@ const LINKS = [
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#premiacao", label: "Premiação" },
   { href: "#ranking", label: "Ranking" },
-  { href: "#faq", label: "FAQ" },
 ];
 
 export function Header() {

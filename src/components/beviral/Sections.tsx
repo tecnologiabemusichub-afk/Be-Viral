@@ -1,6 +1,5 @@
-import { useState } from "react";
 import {
-  Plus, TrendingUp, Play, Heart, MessageCircle, Share2,
+  TrendingUp, Play, Heart, MessageCircle, Share2,
   Music2, Radio, CalendarDays, Eye,
   Home, Trophy, Gift, Clapperboard, User, Search, Bell,
   type LucideIcon,
@@ -514,94 +513,7 @@ export function ContentCreation() {
   );
 }
 
-/* 09 — FAQ */
-export const FAQ: { q: string; a: string }[] = [
-  {
-    q: "O que é o Be Viral?",
-    a: "O Be Viral é uma plataforma da Be Music que reúne campeonatos de cortes com músicas de artistas participantes. Nela, você pode escolher disputas, criar conteúdos e concorrer a premiações conforme as regras de cada campeonato.",
-  },
-  {
-    q: "Como faço para participar?",
-    a: "É simples: clique em Cadastre-se na landing page, crie sua conta e acesse a plataforma para conhecer os campeonatos disponíveis.",
-  },
-  {
-    q: "Preciso ter muitos seguidores para participar?",
-    a: "Consulte os critérios de participação de cada campeonato dentro da plataforma. As orientações específicas estarão disponíveis na página de cada disputa.",
-  },
-  {
-    q: "Onde devo publicar meus cortes?",
-    a: "As publicações poderão acontecer no TikTok, Instagram Reels e YouTube Shorts. Cada campeonato informará quais redes sociais serão consideradas para aquela disputa.",
-  },
-  {
-    q: "Posso usar qualquer versão da música?",
-    a: "Não. É necessário utilizar o áudio oficial indicado para o campeonato, selecionando-o diretamente na biblioteca de áudio da rede social. Não utilize arquivos baixados para inserir a música manualmente no vídeo.",
-  },
-  {
-    q: "Como funciona o ranking?",
-    a: "O desempenho dos participantes é acompanhado com base nas visualizações dos cortes, conforme os critérios definidos para cada campeonato.",
-  },
-  {
-    q: "Como funciona a premiação?",
-    a: "Cada campeonato poderá ter uma dinâmica própria. A premiação poderá considerar posições no ranking, metas ou faixas de visualizações e a quantidade de participantes. Os valores e critérios específicos serão apresentados dentro da plataforma.",
-  },
-  {
-    q: "A audiência que eu conquistar fica comigo?",
-    a: "Sim. Os vídeos são publicados no seu próprio perfil, e a audiência conquistada por meio deles passa a fazer parte da sua comunidade naquela rede social.",
-  },
-  {
-    q: "Posso participar de mais de um campeonato?",
-    a: "Consulte as condições de participação de cada campeonato dentro da plataforma.",
-  },
-];
-export function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
-  return (
-    <section id="faq" className="glow-soft section-x section-y">
-      <div className={cn(wrap, "grid gap-14 lg:grid-cols-[1fr_1.6fr]")}>
-        <Reveal>
-          <Eyebrow>Perguntas frequentes</Eyebrow>
-          <H2>Ficou com dúvida?</H2>
-        </Reveal>
-        <Reveal delay={120}>
-          <ul className="border-t border-border">
-            {FAQ.map((f, i) => {
-              const isOpen = open === i;
-              return (
-                <li key={f.q} className="border-b border-border">
-                  <h3>
-                    <button
-                      type="button"
-                      id={`faq-q-${i}`}
-                      aria-expanded={isOpen}
-                      aria-controls={`faq-a-${i}`}
-                      onClick={() => setOpen(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-6 py-6 text-left text-base font-semibold transition-colors hover:text-orange"
-                    >
-                      {f.q}
-                      <Plus aria-hidden className={cn("h-5 w-5 shrink-0 text-orange transition-transform duration-300", isOpen && "rotate-45")} />
-                    </button>
-                  </h3>
-                  <div
-                    id={`faq-a-${i}`}
-                    role="region"
-                    aria-labelledby={`faq-q-${i}`}
-                    className={cn("grid transition-[grid-template-rows] duration-400 ease-out", isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="pb-6 pr-10 text-sm leading-relaxed text-muted-foreground sm:text-base">{f.a}</p>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* 10 — CTA FINAL */
+/* 09 — CTA FINAL */
 export function FinalCta() {
   return (
     <section id="participar" className="glow-tr-bl section-x section-y overflow-hidden">

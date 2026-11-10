@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/beviral/Header";
 import {
   Hero, About, HowItWorks, Championships, Prizes, Ranking,
-  CreatorBenefit, ContentCreation, Faq, FinalCta, Footer,
+  CreatorBenefit, ContentCreation, FinalCta, Footer,
 } from "@/components/beviral/Sections";
 
 export const Route = createFileRoute("/")({
@@ -32,7 +32,6 @@ function Index() {
         <Ranking />
         <CreatorBenefit />
         <ContentCreation />
-        <Faq />
         <FinalCta />
       </main>
       <Footer />
