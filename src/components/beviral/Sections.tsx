@@ -51,7 +51,7 @@ export function Hero() {
           <Waveform className="mt-10" />
           <CtaButton location="hero" label="CADASTRE-SE" className="mt-10" />
           <p className="mt-6 text-sm italic leading-relaxed text-muted-foreground">
-            Crie. Publique. Alcance mais pessoas. E participe dos campeonatos do Be Viral.
+            {"\n"}
           </p>
         </Reveal>
       </div>
@@ -89,7 +89,7 @@ export function About() {
     <section id="apresentacao" className="glow-tl-br section-x section-y overflow-hidden">
       <div className={cn(wrap, "grid items-center gap-16 lg:grid-cols-2")}>
         <Reveal>
-          <Eyebrow>Apresentação</Eyebrow>
+          <Eyebrow>{"\n"}</Eyebrow>
           <H2>Sua criatividade pode ir mais longe.</H2>
           <Lead className="max-w-lg">
             O Be Viral é uma plataforma de campeonatos de cortes que conecta criadores, músicas e artistas.
@@ -256,7 +256,7 @@ export function Championships() {
         <Reveal className="max-w-4xl">
           <Eyebrow>Campeonatos disponíveis</Eyebrow>
           <H2 className="lg:text-6xl">
-            Uma música. Muitas possibilidades. <span className="text-gradient-word">Qual vai ser o seu próximo corte?</span>
+            Uma música. Muitas possibilidades. <span className="text-gradient-word">{"\nQUAL VAI SER O SEU PRÓXIMO CORTE?"}</span>
           </H2>
           <Lead>Explore os campeonatos disponíveis no Be Viral e escolha aqueles dos quais deseja participar.</Lead>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
