@@ -260,8 +260,8 @@ export function Championships() {
           </H2>
           <Lead>Explore os campeonatos disponíveis no Be Viral e escolha aqueles dos quais deseja participar.</Lead>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-            Cada campeonato é uma oportunidade de criar, alcançar novas pessoas e ajudar uma música a ganhar
-            ainda mais destaque.
+            Cada campeonato é uma oportunidade de criar, alcançar novas pessoas e{"\u00a0"}
+            {"\najudar uma música a ganhar ainda mais destaque."}
           </p>
         </Reveal>
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:mt-24 lg:grid-cols-3">
