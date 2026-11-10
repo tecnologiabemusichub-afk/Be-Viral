@@ -291,7 +291,7 @@ export function Prizes() {
           <Eyebrow>Premiação</Eyebrow>
           <H2>Seu alcance pode valer uma recompensa.</H2>
           <Lead className="mx-auto">
-            No Be Viral, cada campeonato pode ter uma dinâmica própria de premiação.
+            No Be Viral, cada campeonato pode ter uma dinâmica{"\n"}própria de premiação.
           </Lead>
         </Reveal>
         <div className="mt-16 grid gap-5 sm:grid-cols-3 lg:mt-24">
