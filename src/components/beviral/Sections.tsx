@@ -405,10 +405,6 @@ export function Ranking() {
             Acompanhe o desempenho dos participantes e descubra quais cortes estão conquistando mais
             visualizações.
           </Lead>
-          <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
-            O ranking permite acompanhar a evolução dos conteúdos e a posição dos participantes em cada
-            campeonato, de acordo com os critérios estabelecidos para aquela disputa.
-          </p>
           <p className="mt-8 text-2xl font-extrabold uppercase leading-[1.1] tracking-tight lg:text-3xl">
             Seu próximo corte pode <span className="text-gradient-word">mudar tudo.</span>
           </p>
