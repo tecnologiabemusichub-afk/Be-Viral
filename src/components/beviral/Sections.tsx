@@ -279,8 +279,8 @@ export function Championships() {
 
 /* 05 — PREMIAÇÃO (critérios definidos dentro da plataforma) */
 const CRITERIA = [
-  { icon: TrendingUp, t: "Posição no ranking", d: "A posição alcançada pelo participante na disputa." },
-  { icon: Eye, t: "Metas de visualizações", d: "Metas ou faixas de visualizações definidas para o campeonato." },
+  { icon: TrendingUp, t: "RANKING", d: "A posição alcançada pelo participante na disputa." },
+  { icon: Eye, t: "ENGAJAMENTO", d: "Metas ou faixas de visualizações definidas para o campeonato." },
   { icon: Users, t: "Participantes da disputa", d: "A quantidade de participantes daquela disputa." },
 ];
 export function Prizes() {
