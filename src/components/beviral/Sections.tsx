@@ -352,7 +352,7 @@ const CRITERIA = [
 ];
 export function Prizes() {
   return (
-    <section id="premiacao" className="glow-tl-br section-x section-y overflow-hidden">
+    <section id="premiacao" className="glow-tl-br section-x overflow-hidden py-14 lg:py-20">
       <div className={cn(wrap, "text-center")}>
         <Reveal className="mx-auto max-w-3xl">
           <Eyebrow>Premiação</Eyebrow>
@@ -361,26 +361,23 @@ export function Prizes() {
             No Be Viral, cada campeonato pode ter uma dinâmica<br />própria de premiação.
           </Lead>
         </Reveal>
-        <div className="mx-auto mt-16 grid max-w-3xl gap-5 sm:grid-cols-2 lg:mt-24">
+        <div className="mx-auto mt-10 grid max-w-3xl gap-5 sm:grid-cols-2 lg:mt-12">
           {CRITERIA.map((c, i) => (
             <Reveal key={c.t} delay={i * 120}
-              className="h-full rounded-2xl border border-border bg-card/70 p-8 text-left transition-transform duration-300 hover:-translate-y-1">
+              className="h-full rounded-2xl border border-border bg-card/70 p-6 text-left transition-transform duration-300 hover:-translate-y-1">
               <c.icon aria-hidden className="h-8 w-8 text-orange" />
-              <h3 className="mt-6 text-base font-bold uppercase leading-snug">{c.t}</h3>
+              <h3 className="mt-5 text-base font-bold uppercase leading-snug">{c.t}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
             </Reveal>
           ))}
         </div>
-        <p className="mx-auto mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           Cada campeonato terá seus próprios critérios, valores e regras, apresentados dentro da plataforma.
         </p>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed sm:text-lg">
           Escolha seu desafio, crie seus cortes e descubra até onde seu<br />
           conteúdo pode chegar.
         </p>
-        <Reveal delay={120} className="mt-12 flex justify-center">
-          <CtaButton href="#campeonatos" location="premiacao" label="ENCONTRE SEU CAMPEONATO" />
-        </Reveal>
       </div>
     </section>
   );
