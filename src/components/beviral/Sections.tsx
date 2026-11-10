@@ -443,44 +443,7 @@ export function Ranking() {
   );
 }
 
-/* 07 — BENEFÍCIO PARA O CRIADOR */
-export function CreatorBenefit() {
-  return (
-    <section id="criador" className="glow-tr-bl section-x py-14 lg:py-20">
-      <div className={cn(wrap, "grid items-center gap-10 lg:grid-cols-2 lg:gap-14")}>
-        <Reveal>
-          <H2>O público que você conquista é seu.</H2>
-          <Lead className="max-w-lg">
-            Participar de um campeonato pode ser muito mais do que concorrer a uma premiação.
-          </Lead>
-          <p className="mt-6 text-xl font-extrabold uppercase leading-[1.15] tracking-tight lg:text-2xl">
-            Sua criatividade pode <span className="text-gradient-word">abrir novos caminhos.</span>
-          </p>
-        </Reveal>
-        <Reveal delay={150} className="relative overflow-hidden rounded-2xl border border-border bg-card/70 p-6">
-          <div aria-hidden className="flex flex-col">
-            <div className="absolute inset-0 opacity-20" style={{ background: "var(--gradient-word)", maskImage: "linear-gradient(to bottom, black, transparent 70%)" }} />
-            <div className="relative flex items-center gap-3">
-              {[0, 1, 2, 3].map((i) => (
-                <span key={i} className="h-10 w-10 rounded-full bg-gradient-button" style={{ opacity: 0.9 - i * 0.18 }} />
-              ))}
-              <span className="ml-2 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-                Sua audiência
-              </span>
-            </div>
-            <div className="relative mt-6 flex h-32 items-end gap-3">
-              {[35, 55, 45, 70, 60, 85, 100].map((h, i) => (
-                <span key={i} className="flex-1 rounded-t-md bg-gradient-button" style={{ height: `${h}%`, opacity: 0.35 + i * 0.09 }} />
-              ))}
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* 08 — CTA FINAL */
+/* 07 — CTA FINAL */
 export function FinalCta() {
   return (
     <section id="participar" className="glow-tr-bl section-x section-y overflow-hidden">
