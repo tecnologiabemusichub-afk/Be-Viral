@@ -270,7 +270,7 @@ export function Championships() {
           ))}
         </div>
         <p className="mt-10 max-w-2xl text-sm italic leading-relaxed text-muted-foreground">
-          Os detalhes, critérios e orientações de cada disputa estarão disponíveis dentro da plataforma.
+          {"\n"}
         </p>
       </div>
     </section>
