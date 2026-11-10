@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   Plus, TrendingUp, Play, Heart, MessageCircle, Share2,
-  Music2, Radio, CalendarDays, Eye, Users,
+  Music2, Radio, CalendarDays, Eye,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
@@ -281,7 +281,6 @@ export function Championships() {
 const CRITERIA = [
   { icon: TrendingUp, t: "RANKING", d: "A posição alcançada pelo participante na disputa." },
   { icon: Eye, t: "ENGAJAMENTO", d: "Metas ou faixas de visualizações definidas para o campeonato." },
-  { icon: Users, t: "Participantes da disputa", d: "A quantidade de participantes daquela disputa." },
 ];
 export function Prizes() {
   return (
@@ -294,7 +293,7 @@ export function Prizes() {
             No Be Viral, cada campeonato pode ter uma dinâmica<br />própria de premiação.
           </Lead>
         </Reveal>
-        <div className="mt-16 grid gap-5 sm:grid-cols-3 lg:mt-24">
+        <div className="mx-auto mt-16 grid max-w-3xl gap-5 sm:grid-cols-2 lg:mt-24">
           {CRITERIA.map((c, i) => (
             <Reveal key={c.t} delay={i * 120}
               className="h-full rounded-2xl border border-border bg-card/70 p-8 text-left transition-transform duration-300 hover:-translate-y-1">
