@@ -292,7 +292,8 @@ export function Prizes() {
           Cada campeonato terá seus próprios critérios, valores e regras, apresentados dentro da plataforma.
         </p>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">
-          Escolha seu desafio, crie seus cortes e descubra até onde seu conteúdo pode chegar.
+          Escolha seu desafio, crie seus cortes e descubra até onde seu<br />
+          conteúdo pode chegar.
         </p>
         <Reveal delay={120} className="mt-12 flex justify-center">
           <CtaButton href="#campeonatos" location="premiacao" label="ENCONTRE SEU CAMPEONATO" />
