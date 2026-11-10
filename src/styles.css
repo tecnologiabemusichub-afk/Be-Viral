@@ -133,41 +133,81 @@
   color: var(--bv-orange);
 }
 
-/* Logo entrance: the cut halves meet, then the cut line sweeps across. */
+/* Logo motion: the cut halves meet, the line sweeps across and the play pulses. */
 @keyframes cut-word-top-in {
-  from { opacity: 0; transform: translateX(-0.2em); }
+  from { opacity: 0; transform: translateX(-0.28em); }
   to { opacity: 1; transform: translateX(0); }
 }
 @keyframes cut-word-bottom-in {
-  from { opacity: 0; transform: translateX(0.2em); }
+  from { opacity: 0; transform: translateX(0.28em); }
   to { opacity: 1; transform: translateX(0); }
 }
 @keyframes cut-word-line-in {
   from { opacity: 0; transform: translateY(-50%) scaleX(0); }
   to { opacity: 1; transform: translateY(-50%) scaleX(1); }
 }
+@keyframes cut-word-top-idle {
+  0%, 42%, 58%, 100% { transform: translateX(0); }
+  47% { transform: translateX(-0.035em); }
+  52% { transform: translateX(0.018em); }
+}
+@keyframes cut-word-bottom-idle {
+  0%, 42%, 58%, 100% { transform: translateX(0); }
+  47% { transform: translateX(0.035em); }
+  52% { transform: translateX(-0.018em); }
+}
+@keyframes cut-word-line-idle {
+  0%, 42%, 58%, 100% { transform: translateY(-50%) scaleX(1); }
+  47% { transform: translateY(-50%) scaleX(0.97); }
+  52% { transform: translateY(-50%) scaleX(1.015); }
+}
+@keyframes cut-dot-pulse {
+  0%, 100% { box-shadow: 0 0 14px var(--bv-orange); }
+  50% { box-shadow: 0 0 28px var(--bv-orange); }
+}
+@keyframes logo-play-in {
+  from { opacity: 0; transform: scale(0) rotate(-25deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+@keyframes logo-play-idle {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.14) rotate(0); }
+}
 .cut-word-animated .cut-word-top {
   opacity: 0;
-  animation: cut-word-top-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards;
+  animation:
+    cut-word-top-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards,
+    cut-word-top-idle 7s ease-in-out 1.4s infinite;
 }
 .cut-word-animated .cut-word-bottom {
   opacity: 0;
-  animation: cut-word-bottom-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards;
+  animation:
+    cut-word-bottom-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards,
+    cut-word-bottom-idle 7s ease-in-out 1.4s infinite;
 }
 .cut-word-animated .cut-word-line {
   opacity: 0;
   transform-origin: left center;
-  animation: cut-word-line-in 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) 0.75s forwards;
+  animation:
+    cut-word-line-in 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) 0.75s forwards,
+    cut-word-line-idle 7s ease-in-out 1.4s infinite;
+}
+.cut-word-animated .cut-word-line > span:last-child {
+  animation: cut-dot-pulse 2.4s ease-in-out 1.4s infinite;
+}
+.cut-word-animated .logo-play {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation:
+    logo-play-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) 1.05s forwards,
+    logo-play-idle 3.2s ease-in-out 1.8s infinite;
 }
 
 /* Compact logo entrance for the mobile hero. */
 @keyframes logo-part-in {
   from { opacity: 0; transform: translateY(0.22em); }
   to { opacity: 1; transform: translateY(0); }
-}
-@keyframes logo-play-in {
-  from { opacity: 0; transform: scale(0) rotate(-25deg); }
-  to { opacity: 1; transform: scale(1) rotate(0); }
 }
 .logo-animated .logo-be,
 .logo-animated .logo-viral {
@@ -177,8 +217,11 @@
 .logo-animated .logo-viral { animation-delay: 0.18s; }
 .logo-animated .logo-play {
   opacity: 0;
+  transform-box: fill-box;
   transform-origin: center;
-  animation: logo-play-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) 0.65s forwards;
+  animation:
+    logo-play-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) 0.65s forwards,
+    logo-play-idle 3.2s ease-in-out 1.4s infinite;
 }
 
 /* Scroll reveal */
@@ -195,6 +238,7 @@
   .cut-word-animated .cut-word-top,
   .cut-word-animated .cut-word-bottom,
   .cut-word-animated .cut-word-line,
+  .cut-word-animated .logo-play,
   .logo-animated .logo-be,
   .logo-animated .logo-viral,
   .logo-animated .logo-play { opacity: 1; transform: none; }
