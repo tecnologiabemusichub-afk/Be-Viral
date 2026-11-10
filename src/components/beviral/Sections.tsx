@@ -191,9 +191,9 @@ export type Championship = {
   image?: string;
 };
 export const CHAMPIONSHIPS: Championship[] = [
-  { artist: "Campeonato 1", song: "Nome da música", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
-  { artist: "Campeonato 2", song: "Nome da música", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
-  { artist: "Campeonato 3", song: "Nome da música", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
+  { artist: "ARTISTA X", song: "Música Participante", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
+  { artist: "ARTISTA Y", song: "Música Participante", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
+  { artist: "ARTISTA Z", song: "NMúsica Participante", networks: ["TikTok", "Instagram", "YouTube"], period: "20 dias" },
 ];
 
 type MockMenuItem = { icon: LucideIcon; label: string; active?: boolean };
@@ -235,7 +235,7 @@ function ChampionshipCard({ c, delay }: { c: Championship | null; delay: number 
           <>
             <div aria-hidden className="absolute inset-0 opacity-20" style={{ background: "var(--gradient-word)" }} />
             <span className="relative text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-              Arte do campeonato
+              CAMPEONATO {c?.artist === "ARTISTA X" ? "1" : c?.artist === "ARTISTA Y" ? "2" : c?.artist === "ARTISTA Z" ? "3" : ""}
             </span>
           </>
         )}
