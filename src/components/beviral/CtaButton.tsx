@@ -4,7 +4,7 @@ import { ctaHref, trackCta } from "@/config/campaign";
 
 export function CtaButton({
   location,
-  label = "QUERO PARTICIPAR",
+  label = "QUERO SER UM CLIPADOR",
   size = "lg",
   href = ctaHref,
   className,

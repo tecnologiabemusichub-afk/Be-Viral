@@ -48,7 +48,7 @@ export function Hero() {
             Crie vídeos com músicas de artistas participantes, publique nas suas redes e transforme suas
             visualizações em oportunidades de ganhar premiações.
           </p>
-          <CtaButton location="hero" label="CADASTRE-SE" className="mt-10" />
+          <CtaButton location="hero" label="QUERO SER UM CLIPADOR" className="mt-10" />
           <p className="mt-6 text-sm italic leading-relaxed text-muted-foreground">
             {"\n"}
           </p>
@@ -70,7 +70,7 @@ export function Hero() {
           Crie vídeos com músicas de artistas participantes, publique nas suas redes e transforme suas
           visualizações em oportunidades de ganhar premiações.
         </p>
-        <CtaButton location="hero" label="CADASTRE-SE" className="mt-10 w-full" />
+        <CtaButton location="hero" label="QUERO SER UM CLIPADOR" className="mt-10 w-full" />
       </div>
     </section>
   );
@@ -166,7 +166,7 @@ export function HowItWorks() {
           </ol>
         </div>
         <Reveal delay={120} className="mt-14 flex justify-center">
-          <CtaButton location="como_funciona" label="QUERO PARTICIPAR" />
+          <CtaButton location="como_funciona" label="QUERO SER UM CLIPADOR" />
         </Reveal>
       </div>
     </section>
@@ -449,7 +449,7 @@ export function FinalCta() {
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           Entre para o Be Viral, conheça os campeonatos disponíveis e coloque sua criatividade em movimento.
         </p>
-        <CtaButton location="final" label="CADASTRE-SE E PARTICIPE" className="mt-10 w-full px-8 sm:w-auto" />
+        <CtaButton location="final" label="QUERO SER UM CLIPADOR" className="mt-10 w-full px-8 sm:w-auto" />
       </Reveal>
     </section>
   );
